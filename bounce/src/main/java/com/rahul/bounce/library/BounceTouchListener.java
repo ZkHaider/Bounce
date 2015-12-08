@@ -118,31 +118,7 @@ public class BounceTouchListener implements View.OnTouchListener {
             }
 
             case MotionEvent.ACTION_UP: {
-                mActivePointerId = -99;
-                // cancel
-                mContent.animate()
-                        .setInterpolator(mInterpolator)
-                        .translationY(0)
-                        .setDuration(DEFAULT_ANIMATION_TIME)
-                        .setListener(new AnimatorListenerAdapter() {
-                            @Override
-                            public void onAnimationStart(Animator animation) {
-                                ((ValueAnimator) animation).addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                                    @Override
-                                    public void onAnimationUpdate(ValueAnimator animation) {
-                                        if (onTranslateListener != null) {
-                                            onTranslateListener.onTranslate(mContent.getTranslationY());
-                                        }
-                                    }
-                                });
-                                super.onAnimationStart(animation);
-                            }
-                        });
-
-                mDownY = 0;
-                mSwipingDown = false;
-                mSwipingUp = false;
-                downCalled = false;
+                animateBack();
                 break;
             }
 
@@ -172,6 +148,38 @@ public class BounceTouchListener implements View.OnTouchListener {
             }
         }
         return false;
+    }
+
+    /**
+     * Animate the content back to its starting position, this method can be used to reset the position
+     * of this View.
+     */
+    private void animateBack() {
+        mActivePointerId = -99;
+        // cancel
+        mContent.animate()
+                .setInterpolator(mInterpolator)
+                .translationY(0)
+                .setDuration(DEFAULT_ANIMATION_TIME)
+                .setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
+                        ((ValueAnimator) animation).addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                            @Override
+                            public void onAnimationUpdate(ValueAnimator animation) {
+                                if (onTranslateListener != null) {
+                                    onTranslateListener.onTranslate(mContent.getTranslationY());
+                                }
+                            }
+                        });
+                        super.onAnimationStart(animation);
+                    }
+                });
+
+        mDownY = 0;
+        mSwipingDown = false;
+        mSwipingUp = false;
+        downCalled = false;
     }
 
     private void sendCancelEventToView(View view, MotionEvent motionEvent) {

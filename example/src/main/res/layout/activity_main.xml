@@ -244,36 +244,70 @@
 
                 </LinearLayout>
                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:id="@+id/option_3_house"
+                    >
+                    <TextView
+                        android:layout_width="@dimen/options_bullet_size"
+                        android:layout_height="@dimen/options_bullet_size"
+                        android:gravity="center"
+                        android:background="@drawable/bg_options_bullet_green"
+                        android:textSize="@dimen/options_bullet_text_size"
+                        android:textColor="@color/splash_green"
+                        android:text="3"
+                        android:id="@+id/options_bullet_3"
+                        android:fontFamily="sans-serif-medium"
+                        android:textStyle="normal"
+                        />
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:id="@+id/option_3_house"
-                >
+                        android:layout_height="wrap_content"
+                        android:text="@string/option_c"
+                        android:paddingLeft="20dp"
+                        android:textSize="@dimen/options_text_size"
+                        android:textColor="@color/splash_green"
+                        android:id="@+id/options_3"
+                        android:fontFamily="sans-serif-medium"
+                        android:textStyle="normal"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:id="@+id/option_4_house"
+                    >
                     <TextView
-                            android:layout_width="@dimen/options_bullet_size"
-                            android:layout_height="@dimen/options_bullet_size"
-                            android:gravity="center"
-                            android:background="@drawable/bg_options_bullet_green"
-                            android:textSize="@dimen/options_bullet_text_size"
-                            android:textColor="@color/splash_green"
-                            android:text="3"
-                            android:id="@+id/options_bullet_3"
-                            android:fontFamily="sans-serif-medium"
-                            android:textStyle="normal"
-                    />
+                        android:layout_width="@dimen/options_bullet_size"
+                        android:layout_height="@dimen/options_bullet_size"
+                        android:gravity="center"
+                        android:background="@drawable/bg_options_bullet_green"
+                        android:textSize="@dimen/options_bullet_text_size"
+                        android:textColor="@color/splash_green"
+                        android:text="3"
+                        android:id="@+id/options_bullet_4"
+                        android:fontFamily="sans-serif-medium"
+                        android:textStyle="normal"
+                        />
                     <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/option_c"
-                            android:paddingLeft="20dp"
-                            android:textSize="@dimen/options_text_size"
-                            android:textColor="@color/splash_green"
-                            android:id="@+id/options_3"
-                            android:fontFamily="sans-serif-medium"
-                            android:textStyle="normal"
-                    />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/option_c"
+                        android:paddingLeft="20dp"
+                        android:textSize="@dimen/options_text_size"
+                        android:textColor="@color/splash_green"
+                        android:id="@+id/options_4"
+                        android:fontFamily="sans-serif-medium"
+                        android:textStyle="normal"
+                        />
 
                 </LinearLayout>
 
